@@ -6,5 +6,5 @@
 export GRB_LICENSE_FILE= /shared/ccgadmin/app/gurobi/gurobi_docker_client.lic
 while [ 1 -eq 1 ]
 do
-    python server.py 1 4024
+    python backend.py
 done
