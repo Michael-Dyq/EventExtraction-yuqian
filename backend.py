@@ -61,6 +61,7 @@ class MyWebService(object):
             input_paragraph = data['text']
             input_paragraph = re.sub(r'[\n]', ' ', input_paragraph)
             headers = {'Content-type': 'application/json'}
+            '''
             NER_response = requests.post('http://dickens.seas.upenn.edu:4022/ner/',
                                          json={"task": "ner", "text": input_paragraph}, headers=headers)
             if NER_response.status_code != 200:
@@ -71,6 +72,7 @@ class MyWebService(object):
 
             if SRL_response.status_code != 200:
                 return {'error': 'The SRL service is down.'}
+            '''
             SRL_tokens, SRL_sentences = Get_CogComp_SRL_results(input_paragraph)
             print(SRL_sentences['sentenceEndPositions'])
             sentences = list()
